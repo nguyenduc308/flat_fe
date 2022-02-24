@@ -1,22 +1,9 @@
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { createWrapper, HYDRATE } from 'next-redux-wrapper';
-import storage from 'redux-persist/lib/storage'
-
+import { createWrapper } from 'next-redux-wrapper';
 import reducer from './work/reducer';
 import rootSaga from './rootSaga';
-import workSaga from './work/saga'
-
-// const reducer = (state, action) => {
-//   if (action.type === HYDRATE) {
-//     return {
-//       ...state,
-//       ...action.payload, 
-//     };
-//   } else {
-//     return rootReducer(state, action);
-//   }
-// }; 
+import { isClient } from '../helpers/utils';
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -31,10 +18,11 @@ const makeStore = () => {
 
   const sagaMiddleware = createSagaMiddleware();
 
-  const isClient = typeof window !== "undefined";
 
   if (isClient) {
     const { persistStore, persistReducer } = require("redux-persist");
+    const storage  = require('redux-persist/lib/storage');
+
     const persistedReducer = persistReducer({
       key: 'root',
       storage,
