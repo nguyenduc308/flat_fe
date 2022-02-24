@@ -38,6 +38,7 @@ const makeStore = () => {
     const persistedReducer = persistReducer({
       key: 'root',
       storage,
+      whitelist: ['auth']
     }, reducer)
 
     store = createStore(persistedReducer, bindMiddleware([sagaMiddleware]));
