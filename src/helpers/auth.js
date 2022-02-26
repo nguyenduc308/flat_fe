@@ -2,7 +2,7 @@ import { isClient } from "./utils";
 import { setToken } from '../store/auth/actions';
 
 export const getCookieFromBrowser = (key) => {
-    return window.cookie.get(key);
+                return window.cookie.get(key);
 };
 
 export const getCookieFromServer = (key, req) => {
