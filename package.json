@@ -12,7 +12,7 @@
       "eslint --no-ignore --fix",
       "git add --force"
     ],
-    "*.{json,md,js}": [
+    "src/**/*.{json,md,js}": [
       "prettier --write",
       "git add --force"
     ]
