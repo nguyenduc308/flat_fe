@@ -5,5 +5,8 @@
  module.exports = {
     "printWidth": 80,
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "semi": true
   };
