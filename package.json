@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
-    "less": "lessc --js --modify-var=\"ant-prefix=custom\" node_modules/antd/dist/antd.variable.less modified.css"
+    "less": "lessc --js --modify-var=\"ant-prefix=custom\" node_modules/antd/dist/antd.variable.less modified.css",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -15,12 +16,9 @@
     "*.{json,md,js}": [
       "prettier --write",
       "git add --force"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "@ant-design/icons": "4.2.1",
@@ -55,7 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^7.0.4",
-    "lint-staged": "^8.1.0",
+    "lint-staged": "^12.3.4",
     "prettier": "^1.15.3",
     "redux-devtools-extension": "^2.13.5",
     "terser-webpack-plugin": "^5.1.4",
