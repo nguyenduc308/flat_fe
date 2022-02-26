@@ -1,15 +1,13 @@
 import {wrapper} from '../store'
 import { PersistGate } from 'redux-persist/integration/react';
 import { ReactReduxContext } from "react-redux";
-import Link from 'next/link'
 
 function App({ Component, pageProps }) {
   return <ReactReduxContext.Consumer>
     {({store}) => (
-
-    <PersistGate persistor={store.__PERSISTOR} loading={<div>Loading</div>}>
+      <PersistGate persistor={store.__PERSISTOR} loading={<div>Loading</div>}>
         <Component {...pageProps}/>
-     </PersistGate>
+      </PersistGate>
     )}
   
   </ReactReduxContext.Consumer>

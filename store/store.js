@@ -1,6 +1,8 @@
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createWrapper } from 'next-redux-wrapper';
+import storage from 'redux-persist/lib/storage';
+
 import reducer from './work/reducer';
 import rootSaga from './rootSaga';
 import { isClient } from '../helpers/utils';
@@ -21,7 +23,6 @@ const makeStore = () => {
 
   if (isClient) {
     const { persistStore, persistReducer } = require("redux-persist");
-    const storage  = require('redux-persist/lib/storage');
 
     const persistedReducer = persistReducer({
       key: 'root',
