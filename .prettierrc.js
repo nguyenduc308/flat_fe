@@ -8,5 +8,6 @@
     "trailingComma": "all",
     "tabWidth": 2,
     "bracketSpacing": true,
-    "semi": true
+    "semi": true,
+    "useTabs": false,
   };
