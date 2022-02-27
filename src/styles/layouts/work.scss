@@ -16,4 +16,14 @@
             flex: 1;
         }
     }
+
+    .sidebar {
+        padding-right: 2rem;
+        
+        .sidebar-item {
+            &:not(:first-child) {
+                margin-top: 2rem;
+            }
+        }
+    }
 }
