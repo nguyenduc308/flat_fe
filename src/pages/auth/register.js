@@ -4,6 +4,7 @@ import { MailOutlined, LockOutlined, UserSwitchOutlined } from '@ant-design/icon
 import Link from 'next/link';
 import Head from 'next/head';
 import { Select } from 'antd';
+import { DefaultLayout } from '../../components/layouts';
 
 const Register = (props) => {
 
@@ -97,5 +98,7 @@ const Register = (props) => {
      </div>
   </>);
 };
+
+Register.Layout = DefaultLayout;
 
 export default Register;

@@ -2,6 +2,8 @@
     border-bottom: 1px solid #efefef;
     box-shadow: 0px 0px 3px #ccc;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     background: #fff;
     z-index: 999999;
@@ -27,7 +29,13 @@
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     main {
-        margin: $header-height + 40px auto;
+        flex: 1;
+        margin: 0 auto;
+        padding-top: $header-height + 40px;
     }
 }

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { END } from 'redux-saga';
+import { DefaultLayout } from '../components/layouts';
 import { wrapper } from '../store';
 
 const Index = (props) => {
@@ -27,6 +28,8 @@ const Index = (props) => {
     </>
   );
 };
+
+Index.Layout = DefaultLayout;
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
   return {

@@ -6,9 +6,6 @@ function DefaultLayout({ children }) {
     <div className='wrapper'>
         <Header></Header>
             <main>
-              <aside>
-                sidebar
-              </aside>
               <div>
                 {children}
               </div>

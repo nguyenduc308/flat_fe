@@ -4,6 +4,7 @@ import { MailOutlined, LockOutlined } from '@ant-design/icons';
 
 import Link from 'next/link';
 import Head from 'next/head';
+import { DefaultLayout } from '../../components/layouts';
 
 const Login = (props) => {
   const [data, setData] = useState({
@@ -74,5 +75,7 @@ const Login = (props) => {
      </div>
   </>);
 };
+
+Login.Layout = DefaultLayout;
 
 export default Login;
