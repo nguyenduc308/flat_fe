@@ -5,7 +5,7 @@ import { END } from 'redux-saga';
 import WorkItem from '../../components/work/work-item';
 import Head from 'next/head';
 
-const WorkList = (props) => {
+const WorkListByTag = (props) => {
   return (<>
   <Head>
       <title>Công việc freelancer mới nhất</title>
@@ -23,7 +23,7 @@ const WorkList = (props) => {
   </div></>);
 };
 
-WorkList.Layout = WorkLayout;
+WorkListByTag.Layout = WorkLayout;
 
 export const getServerSideProps = wrapper.getServerSideProps(async ({ store }) => {
   store.dispatch(loadData());
@@ -54,4 +54,4 @@ export const getServerSideProps = wrapper.getServerSideProps(async ({ store }) =
   }
 });
 
-export default WorkList;
+export default WorkListByTag;

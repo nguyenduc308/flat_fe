@@ -3,17 +3,19 @@ import Link from 'next/link';
 import TagList from '../tag/tag-list';
 import { Button } from 'antd';
 
-const WorkItem = ({style, className, item}) => {
+const WorkItem = ({style, className, item = {}}) => {
     const wrapAttributes = {
         ...(style ? {style} : {}),
         ...(className ? {className} : {}),
     }
 
+    const tags = item.tags ? Object.entries(item.tags).reduce((acc, [category, tags]) => [...acc, ...tags.map(tag => ({...tag, category }))], []) : [];
+
     return (
         <div  {...wrapAttributes} className="work-item">
             <div className="work-item-left">
                 <div className="work-item-header">
-                    <Link href="/">
+                    <Link href={'/work/' + item.slug}>
                         <a><h3 className="work-item-title">{item.title}</h3></a>
                     </Link>
                     <div className="work-item-meta">
@@ -33,7 +35,7 @@ const WorkItem = ({style, className, item}) => {
                     {item.description}
                 </div>
                 <div className="work-item-footer">
-                    <TagList list={item.tags}></TagList>
+                    <TagList list={tags}></TagList>
                 </div>
             </div>
             <div className="work-item-right">

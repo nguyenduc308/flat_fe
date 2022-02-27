@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const TagList = ({list}) => {
     if (!list || !Array.isArray(list)) list = [];
 
@@ -5,7 +7,9 @@ const TagList = ({list}) => {
         <ul className="tag-list">
             {list.map((item) => {
                 return <li className="tag-item" key={item.id}>
-                    {item.name}
+                    <Link href={'/' + item.category + '/' + item.slug}>
+                        <a>{item.name}</a>
+                    </Link>
                 </li>
             })}
         </ul>

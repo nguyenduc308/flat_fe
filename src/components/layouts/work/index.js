@@ -3,7 +3,7 @@ import Footer from '../default/footer';
 
 function WorkLayout({ children }) {
   return (
-    <div className='work-wrapper'>
+    <div className='wrapper work-wrapper'>
         <Header></Header>
             <main>
               <aside className='sidebar'>
