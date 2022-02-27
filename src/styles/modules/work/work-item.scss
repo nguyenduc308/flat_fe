@@ -1,0 +1,50 @@
+.work-item {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+
+    &-left {
+        flex: 1;
+
+        .work-item-header {
+            .work-item-title {
+            
+            }
+            .work-item-meta {
+                .work-item-meta-list {
+                    list-style: none;
+                    display: flex;
+                    padding: 0;
+                    margin: 0;
+                    .work-item-meta-item {
+                        display: flex;
+                        align-items: center;
+
+                        &:not(:first-child) {
+                            margin-left: 1.5rem;
+                        }
+                        .meta-icon {
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .work-item-footer {
+            margin-top: 1rem;
+        }
+
+    }
+
+    &-right {
+        flex: 0 0 30%;
+        @include flex-center;
+
+        .bid-infor {
+            p {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}

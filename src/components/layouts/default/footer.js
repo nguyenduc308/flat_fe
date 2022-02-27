@@ -1,5 +1,5 @@
 const Footer = () => {
-    return <footer>
+    return <footer className="footer">
         #Footer
     </footer>;
 };

@@ -1,5 +1,5 @@
 const Header = () => {
-    return <header>
+    return <header className="header">
         #Header
     </header>;
 };

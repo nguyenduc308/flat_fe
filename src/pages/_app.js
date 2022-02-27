@@ -8,16 +8,22 @@ import "../styles/index.scss";
 
 ConfigProvider.config({
   theme: {
-    primaryColor: '#25b864',
+    primaryColor: '#2a41e8',
   },
 });
 
+const NoopLayout = (children) => <>{children}</>;
+
 function App({ Component, pageProps }) {
+  const Layout = Component.Layout ? Component.Layout : NoopLayout;
+
   return <ReactReduxContext.Consumer>
     {({store}) => (
       <PersistGate persistor={store.__PERSISTOR} loading={<div>Loading</div>}>
         <ConfigProvider>
-          <Component {...pageProps}/>
+          <Layout>
+              <Component {...pageProps}/>
+          </Layout>
         </ConfigProvider>
       </PersistGate>
     )}
