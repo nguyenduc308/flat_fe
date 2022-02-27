@@ -12,7 +12,7 @@ ConfigProvider.config({
   },
 });
 
-const NoopLayout = (children) => <>{children}</>;
+const NoopLayout = ({children}) => <>{children}</>;
 
 function App({ Component, pageProps }) {
   const Layout = Component.Layout ? Component.Layout : NoopLayout;

@@ -1,14 +1,11 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { wrapper } from '../../store';
 import { WorkLayout } from '../../components/layouts';
 import { loadData } from '../../store/work/actions';
 import { END } from 'redux-saga';
-import Link from 'next/link';
 import WorkItem from '../../components/work/work-item';
 
 const WorkList = (props) => {
-  return (<div className='work-list'>
+  return <div className='work-list'>
     {
         props.list.map((item, index) => {
             return <WorkItem 
@@ -18,7 +15,7 @@ const WorkList = (props) => {
             />
         })
     }
-  </div>);
+  </div>;
 };
 
 WorkList.Layout = WorkLayout;
