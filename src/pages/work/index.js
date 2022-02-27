@@ -1,11 +1,21 @@
+import { END } from 'redux-saga';
+import Head from 'next/head';
+import { useState } from 'react';
+
+import { Pagination } from 'antd';
+
 import { wrapper } from '../../store';
 import { WorkLayout } from '../../components/layouts';
 import { loadData } from '../../store/work/actions';
-import { END } from 'redux-saga';
 import WorkItem from '../../components/work/work-item';
-import Head from 'next/head';
 
 const WorkList = (props) => {
+  const [page, setPage] = useState(1);
+
+  function onPaginatioChange(page) {
+    setPage(page)
+  }
+
   return (<>
   <Head>
       <title>Công việc freelancer mới nhất</title>
@@ -20,7 +30,11 @@ const WorkList = (props) => {
             />
         })
     }
-  </div></>);
+  </div>
+  <div className="pagination-custom pagination-center">
+    <Pagination current={page} onChange={onPaginatioChange} total={50} />
+  </div>
+  </>);
 };
 
 WorkList.Layout = WorkLayout;
