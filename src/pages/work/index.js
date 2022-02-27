@@ -24,8 +24,8 @@ const WorkList = (props) => {
     {
         props.list.map((item, index) => {
             return <WorkItem 
-                key={item.id}
-                style={ index % 2 === 0 ? {'background-color': '#fff'} : {'background-color': '#fafafa'}}
+                key={index}
+                style={ index % 2 === 0 ? {background: '#fff'} : {background: '#fafafa'}}
                 item={item}
             />
         })

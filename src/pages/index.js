@@ -13,18 +13,7 @@ const Index = (props) => {
 
   return (
     <>
-      <Link href='/work'>
-        <a >Work</a>
-      </Link> <br />
-      <Link href='/users/me'>
-        <a >Profile</a>
-      </Link> <br />
-      <Link href='/auth/login'>
-        <a >Login</a>
-      </Link> <br />
-      <Link href='/auth/register'>
-        <a >Register</a>
-      </Link> <br />
+      <h1 style={{'textAlign': 'center'}}>Wellcome to our platform!</h1>
     </>
   );
 };

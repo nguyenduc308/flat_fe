@@ -39,3 +39,29 @@
         padding-top: $header-height + 40px;
     }
 }
+
+.main-menu {
+    .menu-list {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        margin: 0;
+        .menu-item {
+            a {
+                color: #333;
+                font-weight: bold;
+            }
+
+            &:not(:first-child) {
+                a {
+                    padding: 0 1rem;
+                }
+            } 
+            &.active {
+                a {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

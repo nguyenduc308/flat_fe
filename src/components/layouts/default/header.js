@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Menu from "./menu";
 
 const Header = () => {
     return <header className="header">
@@ -11,7 +12,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className="header-content-center">
-                #menu
+                <Menu />
             </div>
             <div>
                 #user
