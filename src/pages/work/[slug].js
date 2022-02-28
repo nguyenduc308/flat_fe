@@ -1,7 +1,9 @@
+import { END } from 'redux-saga';
+
 import { wrapper } from '../../store';
 import { loadData } from '../../store/work/actions';
-import { END } from 'redux-saga';
 import { ContentLayout } from '../../components/layouts';
+import Rating from '../../components/common/rating'
 
 const WorkDetail = (props) => {
   return <div className="work-detail">
@@ -66,11 +68,25 @@ const WorkDetail = (props) => {
         </div>
         <div className="work-section-body">
             <div className="work-section-left">
-              <div className="work-section-left-header">
-                <div className="item">
-                  <p className="label">Tên khách hàng</p>
-                  <h2 className="value">Lưu Quốc Thắng</h2>
-                </div>
+              <div className="customer-box">
+                  <div className="customer-box-item">
+                    <div className="customer-box-item__label">Tên khách hàng</div>
+                    <div className="customer-box-item__value">Lưu Quốc Thắng</div>
+                  </div>
+                  <div className="customer-box-item">
+                    <div className="customer-box-item__label">Số công việc</div>
+                    <div className="customer-box-item__value">8</div>
+                  </div>
+                  <div className="customer-box-item">
+                    <div className="customer-box-item__label">Số công việc hoàn thành</div>
+                    <div className="customer-box-item__value">6</div>
+                  </div>
+                  <div className="customer-box-item">
+                    <div className="customer-box-item__label">Đánh giá</div>
+                    <div className="customer-box-item__value">
+                        <Rating rate={3.5} rateRange={5} isShowCount={true} />
+                    </div>
+                  </div>
               </div>
             </div>
         </div>
