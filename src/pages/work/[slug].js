@@ -91,6 +91,17 @@ const WorkDetail = (props) => {
             </div>
         </div>
     </div>
+
+    <div className='work-section'>
+        <div className="work-section-header">
+          <h3>Thông tin đấu thầu</h3>
+        </div>
+        <div className="work-section-body">
+            <div className="work-section-left">
+              <p>Chưa có ai đấu thầu dự án</p>
+            </div>
+        </div>
+    </div>
   </div>
   ;
 };
