@@ -8,7 +8,7 @@ import "../styles/index.scss";
 
 ConfigProvider.config({
   theme: {
-    primaryColor: '#2a41e8',
+    primaryColor: '#7aa93c',
   },
 });
 
